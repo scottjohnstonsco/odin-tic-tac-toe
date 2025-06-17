@@ -6,8 +6,9 @@ const Gameboard = (() => {
         gameboard.forEach((square, index) => {
             boardHTML += `<div class="square" id=square-${index}>${square}</div>`
         })
+        document.querySelector("#gameboard").innerHTML = boardHTML;
     }
-    document.querySelector("#gameboard").innerHTML = boardHTML;
+    
 
     return{
         render,
@@ -28,14 +29,20 @@ const Game = (() => {
 
         const start = () => {
             players = [
-                createPlayer(document.querySelector("#player1").value, "X",
-                createPlayer(document.querySelector("#player2").value, "O",
+                createPlayer(document.querySelector("#player1").value, "X"),
+                createPlayer(document.querySelector("#player2").value, "O"),
             ]
+            currentPlayerIndex = 0;
+            gameOver = false;
+            Gameboard.render();
+        }
+        return {
+            start,
         }
 })();
 
 
 const startButton = document.querySelector("#start-button");
 startButton.addEventListener("click", ()=>{
-    // Gamepad.start();
+    Game.start();
 })
