@@ -1,10 +1,10 @@
-/* #gameboard {
+#gameboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 300px;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .square {
@@ -24,4 +24,4 @@
 #controls, #message {
     text-align: center;
     margin: 20px 0;
-} */
+}
